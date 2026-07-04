@@ -13,18 +13,49 @@
   header{display:flex;align-items:center;gap:10px;padding:20px 0}
   .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
   .brand{font-weight:700;font-size:18px}
-  .hero{padding:72px 0 40px;text-align:center}
+  .hero{padding:64px 0 30px;text-align:center}
   h1{font-size:44px;line-height:1.15;letter-spacing:-.02em}
   h1 .hl{color:var(--accent)}
   .sub{color:var(--dim);font-size:18px;max-width:640px;margin:18px auto 30px}
   .cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:17px;padding:14px 30px;border-radius:10px;text-decoration:none}
   .cta:hover{filter:brightness(1.1)}
   .cta-note{color:var(--dim);font-size:12px;margin-top:10px}
-  .shot{margin:56px auto 0;max-width:860px;border:1px solid var(--border);border-radius:12px;background:var(--elev);padding:10px}
-  .fakegrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  .pane{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:left;font-family:'Cascadia Mono',Consolas,monospace;font-size:11px;color:var(--dim);min-height:120px}
-  .pane b{color:var(--text);font-weight:600}
-  .pane .g{color:#58d68d}.pane .a{color:var(--accent)}.pane .p{color:#b06bff}
+
+  /* ---- interactive demo ---- */
+  .demo{margin:44px auto 0;max-width:900px;border:1px solid var(--border);border-radius:14px;background:var(--elev);overflow:hidden;text-align:left;box-shadow:0 24px 70px rgba(0,0,0,.45)}
+  .demo-top{display:flex;align-items:center;gap:7px;padding:9px 14px;background:#12151d;border-bottom:1px solid var(--border)}
+  .demo-top .tdot{width:11px;height:11px;border-radius:50%}
+  .demo-top .r{background:#ff5f57}.demo-top .y{background:#febc2e}.demo-top .gg{background:#28c840}
+  .demo-top .tt{margin-left:8px;font-size:12px;color:var(--dim)}
+  .demo-top .tv{margin-left:auto;font-size:11px;color:var(--dim);border:1px solid var(--border);border-radius:20px;padding:1px 9px}
+  .demo-toolbar{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);align-items:center}
+  .chip{background:var(--bg);border:1px solid var(--border);border-radius:7px;color:var(--text);font-size:12px;padding:5px 11px;cursor:pointer;transition:border-color .15s}
+  .chip:hover:not(:disabled){border-color:var(--accent)}
+  .chip:disabled{opacity:.4;cursor:not-allowed}
+  .chip.ghost{margin-left:auto;color:var(--dim)}
+  .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;min-height:300px;background:var(--bg)}
+  .demo-pane{display:flex;flex-direction:column;background:#0f1115;border:1px solid var(--border);border-radius:9px;overflow:hidden;min-height:150px;animation:pop .28s ease}
+  @keyframes pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+  .demo-pane.watch{border-color:#3a2f5e}
+  .demo-head{display:flex;align-items:center;gap:7px;padding:6px 10px;background:var(--elev);border-bottom:1px solid var(--border);font-size:11px}
+  .demo-head .hdot{width:7px;height:7px;border-radius:50%;background:#58d68d;flex:0 0 auto}
+  .demo-head .ring{width:9px;height:9px;border-radius:50%;flex:0 0 auto;box-shadow:0 0 6px currentColor}
+  .demo-head .ht{color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .demo-head .branch{margin-left:auto;font-size:10px;color:var(--dim);background:var(--elev2);border-radius:4px;padding:0 6px;white-space:nowrap}
+  .demo-body{flex:1;padding:9px 11px;font-family:'Cascadia Mono','JetBrains Mono',Consolas,monospace;font-size:11.5px;line-height:1.55;color:var(--dim);overflow:auto;max-height:220px}
+  .ln{white-space:pre-wrap;word-break:break-word}
+  .c-prompt{color:#58d68d}.c-cmd{color:var(--text)}.c-think{color:#b06bff}.c-tool{color:var(--accent)}.c-ok{color:#58d68d}.c-url{color:#6c8cff}
+  .cur{display:inline-block;width:7px;height:13px;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+  .blink{animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .demo-watchbar{font-size:10px;font-weight:700;color:#0f1115;padding:2px 10px}
+  .demo-prompt{display:flex;gap:8px;padding:11px 14px;border-top:1px solid var(--border);background:var(--elev)}
+  .demo-prompt input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:9px 12px;font-size:13px;font-family:inherit}
+  .demo-prompt input:focus{outline:none;border-color:var(--accent)}
+  .demo-prompt button{background:var(--accent);border:none;border-radius:8px;color:#fff;font-weight:600;font-size:13px;padding:0 18px;cursor:pointer}
+  .demo-prompt button:hover{filter:brightness(1.1)}
+  .demo-cap{text-align:center;color:var(--dim);font-size:12px;margin-top:12px}
+
   .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:64px 0}
   .card{background:var(--elev);border:1px solid var(--border);border-radius:12px;padding:22px}
   .card h3{font-size:16px;margin-bottom:8px}
@@ -36,7 +67,7 @@
   summary{color:var(--text);font-weight:600;cursor:pointer}
   footer{border-top:1px solid var(--border);padding:26px 0;color:var(--dim);font-size:13px;display:flex;gap:16px;flex-wrap:wrap}
   footer a{color:var(--dim)}
-  @media(max-width:640px){h1{font-size:32px}.fakegrid{grid-template-columns:1fr}}
+  @media(max-width:640px){h1{font-size:32px}.demo-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -51,14 +82,26 @@
     <a class="cta" href="https://github.com/L0x3n/covibing/releases/latest">⭳ Download for Windows</a>
     <div class="cta-note">Free beta · Windows 10/11 · no admin rights needed</div>
 
-    <div class="shot">
-      <div class="fakegrid">
-        <div class="pane"><b>claude-code · my-api</b> <span class="a">⎇ main</span><br>&gt; claude "fix the flaky auth e2e"<br><span class="p">✳ Thinking…</span><br>● Read test/auth.e2e-spec.ts<br>● Edit src/auth/token.service.ts<br><span class="g">✓ 14 tests passing</span></div>
-        <div class="pane"><b>codex · my-api</b> <span class="a">⎇ main</span><br>&gt; codex "unit tests for stripe webhook retries"<br>● Writing tests…</div>
-        <div class="pane"><b>👁 watching Kevin · claude-code · game</b><br><span class="p">✳ Generating tilemap…</span><br>● Write src/map/generator.ts<br><span class="g">✓ build ok</span></div>
-        <div class="pane"><b>shell · my-api</b><br>PS C:\dev\my-api&gt; pnpm test<br><span class="g">Tests: 87 passed</span></div>
+    <div class="demo">
+      <div class="demo-top">
+        <span class="tdot r"></span><span class="tdot y"></span><span class="tdot gg"></span>
+        <span class="tt">Covibing</span>
+        <span class="tv">try it — it's live</span>
       </div>
+      <div class="demo-toolbar">
+        <button class="chip" data-add="claude">+ Claude</button>
+        <button class="chip" data-add="codex">+ Codex</button>
+        <button class="chip" data-add="shell">+ Shell</button>
+        <button class="chip" data-add="watch">👁 Watch a friend</button>
+        <button class="chip ghost" id="demoReplay">↺ Replay</button>
+      </div>
+      <div class="demo-grid" id="demoGrid"></div>
+      <form class="demo-prompt" id="demoPrompt">
+        <input id="demoInput" placeholder="Tell an agent what to build…" autocomplete="off" spellcheck="false">
+        <button type="submit">Run</button>
+      </form>
     </div>
+    <div class="demo-cap">A simulated preview running in your browser. The real app runs actual agents on your machine.</div>
   </section>
 
   <section class="features">
@@ -89,5 +132,217 @@
     <a href="https://github.com/L0x3n/covibing/releases">All releases</a>
   </footer>
 </div>
+
+<script>
+(function(){
+  "use strict";
+  var grid = document.getElementById('demoGrid');
+  var input = document.getElementById('demoInput');
+  var addBtns = Array.prototype.slice.call(document.querySelectorAll('.chip[data-add]'));
+  var MAXP = 4;
+  var panes = [];        // { body, api }
+  var gen = 0;           // ökas vid reset → gamla scripts avbryter
+
+  function sleep(ms){ return new Promise(function(r){ setTimeout(r, ms); }); }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function rnd(a,b){ return a + Math.random()*(b-a); }
+
+  function refreshControls(){
+    var full = panes.length >= MAXP;
+    addBtns.forEach(function(b){ b.disabled = full; });
+  }
+
+  function reset(){
+    gen++;
+    grid.innerHTML = '';
+    panes = [];
+    refreshControls();
+  }
+
+  // Kastar om panelen tagits bort (reset) eller generationen bytt → stoppar script.
+  function alive(body, myGen){ if(myGen !== gen || !body.isConnected) throw 'abort'; }
+
+  function makePane(opts){
+    if(panes.length >= MAXP) return null;
+    var myGen = gen;
+    var pane = document.createElement('div');
+    pane.className = 'demo-pane' + (opts.watch ? ' watch' : '');
+    var head = document.createElement('div');
+    head.className = 'demo-head';
+    if(opts.watch){
+      head.innerHTML = '<span class="ring" style="background:'+opts.owner.color+';color:'+opts.owner.color+'"></span>'
+        + '<span class="ht">'+esc(opts.owner.name)+' · '+esc(opts.agent)+' · '+esc(opts.workspace)+'</span>';
+    } else {
+      head.innerHTML = '<span class="hdot"></span>'
+        + '<span class="ht">'+esc(opts.agent)+' · '+esc(opts.workspace)+'</span>'
+        + '<span class="branch">⎇ '+esc(opts.branch||'main')+'</span>';
+    }
+    var body = document.createElement('div');
+    body.className = 'demo-body';
+    pane.appendChild(head); pane.appendChild(body);
+    if(opts.watch){
+      var wb = document.createElement('div');
+      wb.className = 'demo-watchbar';
+      wb.style.background = opts.owner.color;
+      wb.textContent = '👁 view only';
+      pane.appendChild(wb);
+    }
+    grid.appendChild(pane);
+
+    function writeLine(html, cls){
+      alive(body, myGen);
+      var l = document.createElement('div');
+      l.className = 'ln ' + (cls||'');
+      l.innerHTML = html;
+      body.appendChild(l);
+      body.scrollTop = body.scrollHeight;
+      return l;
+    }
+    async function type(lineEl, text, cls){
+      var span = document.createElement('span'); span.className = cls||''; lineEl.appendChild(span);
+      var cur = document.createElement('span'); cur.className = 'cur'; lineEl.appendChild(cur);
+      for(var i=0;i<text.length;i++){
+        alive(body, myGen);
+        span.textContent += text[i];
+        body.scrollTop = body.scrollHeight;
+        await sleep(rnd(16, 46));
+      }
+      cur.remove();
+    }
+    var api = {
+      async cmd(text){
+        var l = writeLine('<span class="c-prompt">&gt;</span> ');
+        await type(l, text, 'c-cmd');
+        await sleep(340);
+      },
+      async shellCmd(prompt, text){
+        var l = writeLine('<span style="color:var(--dim)">'+esc(prompt)+'</span> ');
+        await type(l, text, 'c-cmd');
+        await sleep(200);
+      },
+      async think(label, ms){
+        var l = writeLine('<span class="c-think">✳</span> <span class="c-think blink">'+esc(label)+'</span>');
+        await sleep(ms);
+        alive(body, myGen);
+      },
+      async tool(text){ await sleep(rnd(260,520)); writeLine('<span class="c-tool">●</span> '+esc(text)); },
+      async out(html, cls){ await sleep(rnd(160,300)); writeLine(html, cls); },
+      async ok(text){ await sleep(360); writeLine('<span class="c-ok">✓</span> '+esc(text), 'c-ok'); },
+    };
+    var entry = { body: body, api: api };
+    panes.push(entry);
+    refreshControls();
+    return entry;
+  }
+
+  // ---- scripts ----
+  var CLAUDE_JOBS = [
+    { p:'add a dark mode toggle to settings', steps:['Read src/theme/index.ts','Read src/pages/Settings.tsx','Edit src/theme/index.ts  (+18 −2)','Edit src/pages/Settings.tsx  (+9 −0)','Bash: pnpm test'], ok:'Dark-mode toggle added — 24 tests green.' },
+    { p:'fix the flaky auth e2e test', steps:['Read test/auth.e2e-spec.ts','Read src/auth/token.service.ts','Edit src/auth/token.service.ts  (+6 −4)','Bash: pnpm test -- auth'], ok:'Race in token refresh fixed — 14/14 passing.' },
+    { p:'add pagination to the users table', steps:['Read src/api/users.ts','Edit src/api/users.ts  (+22 −3)','Edit src/components/UsersTable.tsx  (+31 −5)','Bash: pnpm test'], ok:'Cursor pagination added — tests green.' }
+  ];
+
+  async function runClaude(pane, job){
+    var j = job || CLAUDE_JOBS[Math.floor(Math.random()*CLAUDE_JOBS.length)];
+    await pane.api.cmd(j.p);
+    await pane.api.think('Thinking…', rnd(1100,1700));
+    for(var i=0;i<j.steps.length;i++){ await pane.api.tool(j.steps[i]); }
+    await pane.api.out('  <span class="c-ok">✓ tests passed</span>');
+    await pane.api.ok(j.ok);
+  }
+  async function runCodex(pane){
+    await pane.api.cmd('unit tests for the stripe webhook retries');
+    await pane.api.think('Reasoning…', rnd(1300,1800));
+    await pane.api.tool('Read src/billing/webhook.ts');
+    await pane.api.tool('Create test/webhook.retry.test.ts');
+    await pane.api.tool('Bash: pnpm test -- webhook');
+    await pane.api.out('  <span class="c-ok">✓ 6 tests added</span>');
+    await pane.api.ok('Retry + idempotency covered.');
+  }
+  async function runShell(pane){
+    await pane.api.shellCmd('PS C:\\dev\\my-api>', 'pnpm dev');
+    await pane.api.out('');
+    await pane.api.out('  <span style="color:var(--dim)">VITE v6.4.3  ready in 412 ms</span>');
+    await pane.api.out('');
+    await pane.api.out('  ➜  Local:   <span class="c-url">http://localhost:5173/</span>');
+    await pane.api.out('  <span style="color:var(--dim)">➜  press h + enter to show help</span>');
+  }
+  async function runFriend(pane){
+    await pane.api.cmd('generate a 32×32 forest tilemap');
+    await pane.api.think('Generating tilemap…', rnd(1400,2000));
+    await pane.api.tool('Write src/map/generator.ts');
+    await pane.api.tool('Write assets/tiles/forest.json');
+    await pane.api.tool('Bash: pnpm build');
+    await pane.api.out('  <span class="c-ok">✓ build ok</span>');
+    await pane.api.ok('Tilemap generated — 18 tile variants.');
+  }
+  async function runCustom(pane, text){
+    await pane.api.cmd(text);
+    await pane.api.think('Thinking…', rnd(1100,1600));
+    await pane.api.tool('Read src/…');
+    await pane.api.tool('Edit src/… (+' + Math.floor(rnd(6,40)) + ' −' + Math.floor(rnd(0,8)) + ')');
+    await pane.api.tool('Bash: pnpm test');
+    await pane.api.out('  <span class="c-ok">✓ tests passed</span>');
+    await pane.api.ok('Done — ' + (text.length>46 ? text.slice(0,46)+'…' : text));
+  }
+
+  function spawn(kind, opts){
+    if(kind==='watch'){
+      var pw = makePane({ watch:true, owner:{name:'Kevin', color:'#b06bff'}, agent:'claude-code', workspace:'game' });
+      if(pw) runFriend(pw).catch(function(){});
+      return;
+    }
+    var meta = kind==='shell' ? {agent:'shell',workspace:'my-api'}
+             : kind==='codex' ? {agent:'codex',workspace:'my-api'}
+             : {agent:'claude-code',workspace:'my-api'};
+    var p = makePane(meta);
+    if(!p) return;
+    var run = kind==='shell' ? runShell(p)
+            : kind==='codex' ? runCodex(p)
+            : (opts && opts.text) ? runCustom(p, opts.text)
+            : runClaude(p);
+    run.catch(function(){});
+  }
+
+  async function autoplay(){
+    reset();
+    var g = gen;
+    spawn('claude');
+    await sleep(2400); if(g!==gen) return;
+    spawn('shell');
+    await sleep(1700); if(g!==gen) return;
+    spawn('watch');
+  }
+
+  // ---- controls ----
+  addBtns.forEach(function(b){
+    b.addEventListener('click', function(){ spawn(b.getAttribute('data-add')); });
+  });
+  document.getElementById('demoReplay').addEventListener('click', autoplay);
+  document.getElementById('demoPrompt').addEventListener('submit', function(e){
+    e.preventDefault();
+    var text = input.value.trim();
+    if(!text) return;
+    input.value = '';
+    if(panes.length >= MAXP){
+      // gör plats: nollställ och kör bara denna prompt
+      reset();
+    }
+    spawn('claude', { text: text });
+  });
+
+  // starta när demon syns (eller direkt om redan i vy)
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ io.disconnect(); autoplay(); }
+      });
+    }, { threshold:0.25 });
+    io.observe(grid);
+  } else {
+    autoplay();
+  }
+})();
+</script>
 </body>
 </html>
