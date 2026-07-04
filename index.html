@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Covibing — live vibe coding with friends</title>
+<meta name="description" content="Run up to 16 AI agent terminals in one grid and watch your friends' agents live. Your machine, your accounts, peer-to-peer.">
+<style>
+  :root{--bg:#0f1115;--elev:#161922;--elev2:#1d212c;--border:#262b38;--text:#e6e8ee;--dim:#9aa3b2;--accent:#6c8cff}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--text);font-family:system-ui,'Segoe UI',Roboto,sans-serif;line-height:1.6}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  header{display:flex;align-items:center;gap:10px;padding:20px 0}
+  .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .brand{font-weight:700;font-size:18px}
+  .hero{padding:72px 0 40px;text-align:center}
+  h1{font-size:44px;line-height:1.15;letter-spacing:-.02em}
+  h1 .hl{color:var(--accent)}
+  .sub{color:var(--dim);font-size:18px;max-width:640px;margin:18px auto 30px}
+  .cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:17px;padding:14px 30px;border-radius:10px;text-decoration:none}
+  .cta:hover{filter:brightness(1.1)}
+  .cta-note{color:var(--dim);font-size:12px;margin-top:10px}
+  .shot{margin:56px auto 0;max-width:860px;border:1px solid var(--border);border-radius:12px;background:var(--elev);padding:10px}
+  .fakegrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .pane{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:left;font-family:'Cascadia Mono',Consolas,monospace;font-size:11px;color:var(--dim);min-height:120px}
+  .pane b{color:var(--text);font-weight:600}
+  .pane .g{color:#58d68d}.pane .a{color:var(--accent)}.pane .p{color:#b06bff}
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:64px 0}
+  .card{background:var(--elev);border:1px solid var(--border);border-radius:12px;padding:22px}
+  .card h3{font-size:16px;margin-bottom:8px}
+  .card p{color:var(--dim);font-size:14px}
+  .privacy{background:var(--elev);border:1px solid var(--border);border-radius:12px;padding:26px;margin-bottom:64px}
+  .privacy h2{font-size:20px;margin-bottom:8px}
+  .privacy p{color:var(--dim);font-size:14px}
+  details{margin:0 0 64px;color:var(--dim);font-size:14px;background:var(--elev);border:1px solid var(--border);border-radius:12px;padding:18px 22px}
+  summary{color:var(--text);font-weight:600;cursor:pointer}
+  footer{border-top:1px solid var(--border);padding:26px 0;color:var(--dim);font-size:13px;display:flex;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--dim)}
+  @media(max-width:640px){h1{font-size:32px}.fakegrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><span class="dot"></span><span class="brand">Covibing</span></header>
+
+  <section class="hero">
+    <h1>Live <span class="hl">vibe coding</span><br>with your friends</h1>
+    <p class="sub">Run up to 16 AI agent terminals — Claude Code, Codex, your shell — in one
+    split-pane grid. Invite friends and watch each other's agents work, live. Everything runs
+    on your own machine with your own accounts.</p>
+    <a class="cta" href="https://github.com/L0x3n/covibing/releases/latest">⭳ Download for Windows</a>
+    <div class="cta-note">Free beta · Windows 10/11 · no admin rights needed</div>
+
+    <div class="shot">
+      <div class="fakegrid">
+        <div class="pane"><b>claude-code · my-api</b> <span class="a">⎇ main</span><br>&gt; claude "fix the flaky auth e2e"<br><span class="p">✳ Thinking…</span><br>● Read test/auth.e2e-spec.ts<br>● Edit src/auth/token.service.ts<br><span class="g">✓ 14 tests passing</span></div>
+        <div class="pane"><b>codex · my-api</b> <span class="a">⎇ main</span><br>&gt; codex "unit tests for stripe webhook retries"<br>● Writing tests…</div>
+        <div class="pane"><b>👁 watching Kevin · claude-code · game</b><br><span class="p">✳ Generating tilemap…</span><br>● Write src/map/generator.ts<br><span class="g">✓ build ok</span></div>
+        <div class="pane"><b>shell · my-api</b><br>PS C:\dev\my-api&gt; pnpm test<br><span class="g">Tests: 87 passed</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="card"><h3>🧩 Up to 16 agent terminals</h3><p>Split and resize in any direction. Claude Code, Codex and any shell command, each in its own pane with git branch, unread badges and a prompt queue.</p></div>
+    <div class="card"><h3>👀 Watch your friends live</h3><p>Share a pane to your session and friends see the agent's terminal in real time — view-only, always. Nobody can ever type into your machine.</p></div>
+    <div class="card"><h3>🔑 Your own AI accounts</h3><p>Everyone signs in to their own Claude/Codex on their own machine. Covibing never sees, stores or proxies your AI credentials or code.</p></div>
+    <div class="card"><h3>⚡ Peer-to-peer streaming</h3><p>Terminal streams go directly between machines over WebRTC. Our server only handles accounts, sessions and invites.</p></div>
+    <div class="card"><h3>🎯 Drag-and-drop skills</h3><p>Keep a library of agent skills and drop them onto any pane to install into that project's <code>.claude/skills/</code>.</p></div>
+    <div class="card"><h3>🪶 A 1.5 MB install</h3><p>Built on Rust + Tauri, not Electron. The whole installer is a few megabytes and needs no admin rights — it uses the WebView already on your PC.</p></div>
+  </section>
+
+  <section class="privacy">
+    <h2>Privacy by architecture</h2>
+    <p>Terminal output, scrollback, project paths and layouts never touch our servers — they live
+    on your machine and stream peer-to-peer only to session members you invited. What we store:
+    your email, display name, session names and invite codes. That's it.</p>
+  </section>
+
+  <details>
+    <summary>Windows says "Windows protected your PC"?</summary>
+    <p style="margin-top:10px">The beta installer isn't code-signed yet, so SmartScreen shows a
+    warning the first time. Click <b>More info</b> → <b>Run anyway</b>. The download always comes
+    from our GitHub Releases page, so you can verify the source yourself.</p>
+  </details>
+
+  <footer>
+    <span>© 2026 Covibing</span>
+    <a href="https://github.com/L0x3n/covibing/releases">All releases</a>
+  </footer>
+</div>
+</body>
+</html>

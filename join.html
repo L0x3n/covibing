@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join a Covibing session</title>
+<style>
+  body{background:#0f1115;color:#e6e8ee;font-family:system-ui,'Segoe UI',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
+  .box{background:#161922;border:1px solid #262b38;border-radius:12px;padding:32px;max-width:420px;text-align:center}
+  code{display:block;background:#0f1115;border:1px solid #262b38;border-radius:6px;padding:10px;margin:14px 0;word-break:break-all;user-select:all}
+  a{color:#6c8cff}
+  .dim{color:#9aa3b2;font-size:14px}
+</style>
+</head>
+<body>
+<div class="box">
+  <h2>Join a Covibing session</h2>
+  <p class="dim" id="status">Opening Covibing…</p>
+  <code id="code">…</code>
+  <p class="dim">If the app didn't open: copy the code above and paste it into
+  <b>Session → paste an invite code</b> in Covibing.<br><br>
+  Don't have the app? <a href="https://github.com/L0x3n/covibing/releases/latest">Download for Windows</a></p>
+</div>
+<script>
+  // Token via ?t=<token> (GitHub Pages har inga dynamiska routes).
+  const t = new URLSearchParams(location.search).get('t') || ''
+  document.getElementById('code').textContent = t || '(no code in link)'
+  if (t && /^[A-Za-z0-9]+$/.test(t)) {
+    location.href = 'covibing://join/' + t
+  } else {
+    document.getElementById('status').textContent = 'Invalid invite link.'
+  }
+</script>
+</body>
+</html>
